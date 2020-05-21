@@ -16,50 +16,14 @@
 	// 	"description": "Log output to console"
 	// }
 "ARM": {
-	"prefix": "arm-empty",
-	"body": [
-	"{",
-	"    \"$$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#\",",
-	"    \"contentVersion\": \"1.0.0.0\",",
-	"    \"parameters\": {},",
-	"    \"variables\": {},",
-	"    \"resources\": []",
-	"}",
-	],
-	"description": ""
-	},		
-"Blueprint": {
-	"prefix": "blueprint",
-	"body": [
-	"{",
-	"    \"properties\": {",
-	"      \"displayName\": \"\",",
-	"      \"description\": \"\",",
-	"      \"targetScope\": \"subscription\",",
-	"      \"parameters\": {}",
-	"    },",
-	"    \"resourceGroups\": {}",
-	"    }",
-	"  }",
-	"}",
-	],
-	"description": ""
-},
-"Blueprint-artifact": {
-"prefix": "blueprint-artifact",
+"prefix": "arm-empty",
 "body": [
 "{",
-"    \"kind\": \"template\",",
-"    \"properties\": {",
-"        \"displayName\": \"\",",
-"        \"description\": \"\",",
-"        \"dependsOn\": [],",
-"        \"template\": {",
-"",
-"        },",
-"        \"resourceGroup\": \"\",",
-"        \"parameters\": {}",
-"    }",
+"    \"$$schema\": \"https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#\",",
+"    \"contentVersion\": \"1.0.0.0\",",
+"    \"parameters\": {},",
+"    \"variables\": {},",
+"    \"resources\": []",
 "}",
 ],
 "description": ""

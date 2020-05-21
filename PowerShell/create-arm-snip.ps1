@@ -9,6 +9,10 @@ $newSnippet = @()
 Add-Type -AssemblyName Microsoft.VisualBasic
 $snipName = [Microsoft.VisualBasic.Interaction]::InputBox('Enter a name for this Snippet', 'ARM to Snip', "vnet")
 
+# Exit on blank name or cancel (0)
+if ($snipName -eq 0) { exit }
+if ($snipName -eq '') { exit }
+
 # Add snippet header
 $newSnippet += '"ARM-' + $snipName + '": {'
 $newSnippet += '"prefix": "' + $snipName + '",'
