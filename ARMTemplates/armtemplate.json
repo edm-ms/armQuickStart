@@ -1,7 +1,32 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "variables": {},
-    "resources": []
+      "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "environment": {
+          "type": "string",
+          "allowedValues": [ "prd","npd", "sbx" ]
+        },
+        "appName": {
+          "type": "string"
+        }
+      },
+      "variables": {
+        "location": "[replace(replace(replace(parameters('environment'), 'prd', 'eastus2'), 'npd', 'centralus'), 'sbx', 'centralus')]",
+        "regionName": "[replace(replace(replace(replace(replace(replace(variables('location'),'north','n'), 'east', 'e'),'south', 's'),'west', 'w'),'central', 'c'), 'us','u')]",
+        "appPurpose": "[toLower(parameters('appName'))]",
+        "nameFormat": "[concat(variables('regionName'), '-', parameters('environment'), '-', variables('appPurpose'))]",
+        "shortName": {
+          "keyVault": "kv",
+          "logAnalytics": "la",
+          "azureFirewall": "azfw",
+          "networkSecurityGroup": "nsg",
+          "azureFrontDoor": "afd",
+          "publicIP": "pip",
+          "managedIdentity": "mi",
+          "sqlDB": "sql",
+          "sqlMI": "sqlmi"
+        }
+      },
+      "resources": [],
+      "outputs": {}
 }
